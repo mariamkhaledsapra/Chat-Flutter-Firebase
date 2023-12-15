@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -105,6 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
 
       String? userId = credential.user!.uid;
+      // ignore: unused_local_variable
       String name = email.substring(0, email.indexOf('@'));
 
       DocumentSnapshot userData = await FirebaseFirestore.instance
@@ -181,9 +184,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 14),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
+                      children: [
                         Text(
                           'Forgot password?',
                           style: TextStyle(

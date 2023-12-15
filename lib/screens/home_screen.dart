@@ -164,6 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
             }),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
+            // ignore: avoid_print
             print(widget.userModel?.userId);
             Navigator.push(
               context,
